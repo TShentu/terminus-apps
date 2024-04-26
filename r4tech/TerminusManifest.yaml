@@ -14,7 +14,7 @@ permission:
   appCache: true
 spec:
   versionName: '0.0.1'
-  featuredImage: https://file.bttcdn.com/appstore/recommendcover/News02.png
+  featuredImage: https://file.bttcdn.com/appstore/r4tech/featuredImage.png
   fullDescription: |
     R4Tech brings you the latest in Technology news and coverage from around the world. It recommends articles from the latest in science and technology to insights from tech industry leaders.
     
