@@ -1,6 +1,7 @@
 #### Default credentials
-Username: admin 
-Password: password
+
+Username: admin <br>
+Password: password <br>
 Please change username and password as soon as possible.
 
 #### Sync Setup Guide
