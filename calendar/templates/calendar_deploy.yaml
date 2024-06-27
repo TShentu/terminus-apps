@@ -38,11 +38,11 @@ spec:
         imagePullPolicy: IfNotPresent
         resources:
           requests:
-            cpu: 50m
-            memory: 32Mi
+            cpu: 20m
+            memory: 20Mi
           limits:
-            cpu: 500m
-            memory: 64Mi        
+            cpu: 100m
+            memory: 100Mi    
         volumeMounts:
         - name: redis-data
           mountPath: /data  
@@ -51,7 +51,7 @@ spec:
         imagePullPolicy: IfNotPresent
         resources:
           requests:
-            cpu: 50m
+            cpu: 20m
             memory: 32Mi
           limits:
             cpu: 500m
@@ -63,11 +63,11 @@ spec:
         imagePullPolicy: IfNotPresent
         resources:
           requests:
-            cpu: 50m
-            memory: 32Mi
+            cpu: 20m
+            memory: 128Mi
           limits:
             cpu: 500m
-            memory: 64Mi    
+            memory: 500Mi    
         env:
         - name: HOST
           value: localhost
@@ -84,11 +84,11 @@ spec:
         - name: DB_PORT
           value: "{{ .Values.postgres.port }}"
         - name: DB_USERNAME
-          value: "calendar"  
+          value: {{ .Values.postgres.username }}  
         - name: DB_PASSWORD
           value: {{ .Values.postgres.password }}
         - name: DB_DATABASE
-          value: "bloben_api" 
+          value: {{ .Values.postgres.databases.bloben_api }}
         - name: DB_CONNECTION
           value: "postgres"    
         - name: DB_SYNCHRONIZE
@@ -102,7 +102,7 @@ spec:
         - name: REDIS_HOST
           value: localhost
         - name: REDIS_PORT
-          value: "6379"    
+          value: "6379"   
         - name: SESSION_SECRET
           value: "asdasd"
         - name: OTP_SECRET
@@ -115,7 +115,8 @@ spec:
       - name: redis-data
         hostPath:
           type: DirectoryOrCreate
-          path: {{ .Values.userspace.appData }}/calendar/redisdata  
+          path: {{ .Values.userspace.appdata }}/calendar/redisdata  
+      
 
 ---
 apiVersion: v1
