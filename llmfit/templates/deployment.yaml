@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: llmfit
-        image: "beclab/llmfit:v1.0.0"
+        image: "beclab/llmfit:v1.0.1"
         imagePullPolicy: IfNotPresent
         args: ["serve", "--host", "0.0.0.0", "--port", "8787"]
         ports:
